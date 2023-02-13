@@ -4,22 +4,23 @@ Loglikelihood_Reddit.py -> un script d'extraction de trigrammes selon leur fréq
 Analyse_Annotations.py -> un script pour analyser et comparer les annotations faites par deux équipes sur Prodigy
 
 ExtractionMessages1.py: 
-- Données d'entrée: fichier .xml contenant tous les postes du Reddit TIFU-SHORT
+- Données d'entrée: fichier .xml contenant tous les postes du corpus Reddit TIFU-SHORT
 - Données de sortie: 
 CalculsTfIdf.csv -> fichier contenant les métriques en détail de chaque trigramme
 toAnnotate.csv -> document final contenant les messages à annoter
 toAnnotate.jsonl -> document final transformé en jsonl pour l'annotation dans Prodigy
+Le bloc de code qui génère le .jsonl est lancé en prenant pour entrée le fichier toAnnotate.csv 
 
 Loglikelihood_Reddit.py: 
-- Données d'entrée: fichier .xml contenant tous les postes du Reddit TIFU-SHORT ou bien le jsonl
+- Données d'entrée: fichier .xml contenant tous les postes du Reddit TIFU-SHORT ou le fichier .jsonl contenant le corpus
 -Données de sortie:
 Reddit_loglikelihood_Phrases_Tokens.csv -> fichier contenant les métriques en détail de chaque trigramme
-toAnnotate_LL_Phrases_Tokens.jsonl -> document final transformé en jsonl pour l'annotation dans Prodigy
+toAnnotate_LL_Phrases_Tokens.jsonl -> document final transformé en .jsonl pour l'annotation dans Prodigy
 
 Analyse_Annotations.py: 
-- Données d'entrée: les deux fichiers jsonl. contenant les annotations de Prodigy
+- Données d'entrée: les deux fichiers .jsonl contenant les annotations faites avec Prodigy par les deux équipes
 - Données de sortie:
-besedo_annot.csv -> document csv contenant toutes les annotations de l'équipe Besedo, doublons enlevés. Chaque ligne représente une annotation
-litl_annot.csv -> document csv contenant toutes les annotations de l'équipe LITL, doublons enlevés. Chaque ligne représente une annotation
+besedo_annot.csv -> document .csv contenant toutes les annotations de l'équipe Besedo, doublons enlevés. Chaque ligne représente une annotation
+litl_annot.csv -> document .csv contenant toutes les annotations de l'équipe LITL, doublons enlevés. Chaque ligne représente une annotation
 Nombre d'annotations de chaque catégorie d'annotation (accord, accord partiel, désaccord)
 Les scores de kappa de cohen, global et par étiquette
